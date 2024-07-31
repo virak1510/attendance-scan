@@ -54,6 +54,12 @@ func SetupRouter(db *sqlx.DB) *gin.Engine {
 				return true
 			},
 		}
+
+		public.GET("/ping", func(c *gin.Context) {
+			c.JSON(http.StatusOK, gin.H{
+				"message": "pong",
+			})
+		})
 		public.POST("/register", userController.Register)
 		public.POST("/login", userController.Login)
 		public.GET("/ws", func(c *gin.Context) {
