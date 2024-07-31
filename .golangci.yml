@@ -1,0 +1,29 @@
+linters:
+  enable:
+    - golint
+    - govet
+    - structcheck
+    - unused
+    - varcheck
+    - deadcode
+    - errcheck
+    - ineffassign
+    - staticcheck
+    - typecheck
+  presets:
+    - bugs
+    - comment
+    - complexity
+    - error
+    - format
+    - import
+    - metalinter
+    - module
+    - performance
+    - sql
+    - style
+    - test
+    - unused
+  # Enable only fast linters from enabled linters set (first run won't be fast)
+  # Default: false
+  fast: true
