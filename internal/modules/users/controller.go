@@ -45,7 +45,7 @@ func (u *Controller) Login(c *gin.Context) {
 		return
 	}
 	response := pkg.BuildResponse(http.StatusOK, pkg.SUCCESS, loginPayload)
-	c.SetCookie("token", loginPayload.Token, 3600, "/", "notlocal.local", false, true)
+	c.SetCookie("token", loginPayload.Token, 3600, "/", "", false, true)
 	c.JSON(http.StatusOK, response)
 }
 
