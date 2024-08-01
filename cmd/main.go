@@ -19,6 +19,7 @@ func main() {
 	// 	log.Fatal("Error loading .env file")
 	// }
 	connStr := os.Getenv("DATABASE_URL")
+	port := os.Getenv("PORT")
 	db, err := GetDB(connStr)
 	fmt.Println(err)
 	if err != nil {
@@ -28,7 +29,7 @@ func main() {
 
 	router := routers.SetupRouter(db)
 
-	router.Run("0.0.0.0:2025")
+	router.Run("0.0.0.0:" + port)
 }
 
 func GetDB(uri string) (*sqlx.DB, error) {
