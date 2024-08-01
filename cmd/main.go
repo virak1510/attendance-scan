@@ -29,7 +29,9 @@ func main() {
 
 	router := routers.SetupRouter(db)
 
-	router.Run("0.0.0.0:" + port)
+	if err := router.Run("0.0.0.0:" + port); err != nil {
+		log.Fatalln(err)
+	}
 }
 
 func GetDB(uri string) (*sqlx.DB, error) {
