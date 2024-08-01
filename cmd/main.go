@@ -28,7 +28,7 @@ func main() {
 
 	router := routers.SetupRouter(db)
 
-	router.Run(":2025")
+	router.Run("0.0.0.0:2025")
 }
 
 func GetDB(uri string) (*sqlx.DB, error) {
