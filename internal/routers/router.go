@@ -20,7 +20,7 @@ func SetupRouter(db *sqlx.DB) *gin.Engine {
 	gin.SetMode(os.Getenv("GIN_MODE"))
 	router := gin.Default()
 	router.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"http://localhost:3000", "http://192.168.0.242:3000", "https://notlocal.local"},
+		AllowOrigins:     []string{"http://localhost:3000", "http://192.168.0.242:3000", "https://notlocal.local, https://attendance-scan-production.up.railway.app"},
 		AllowMethods:     []string{"PUT", "PATCH", "GET", "POST", "OPTIONS", "DELETE"},
 		AllowHeaders:     []string{"*"},
 		ExposeHeaders:    []string{"Content-Length"},
